@@ -21,10 +21,25 @@
 *  "Thank you -- have a great day!"
 *  
 */
+import java.util.Scanner;
 
 public class Grader {
   
   public static void main(String[] args) {
+    Scanner scnr = new Scanner(System.in);
+    double numMiss = 0.0;
+    double numTotal = 0.0;
+    
+    
+    System.out.println("How many points were possible on the test? ");
+    numTotal = scnr.nextDouble();
+    System.out.println("How many points did you miss on the test? ");
+    numMiss = scnr.nextDouble();
+    if (numMiss < 0) {
+    System.out.println("Thank-you");
+    } else {
+    System.out.println("By missing " + numMiss + " points, you get a score of " + ((numTotal - numMiss)/numTotal)*100 + "%");
+    }
     //TODO insert your code here
   }
   
